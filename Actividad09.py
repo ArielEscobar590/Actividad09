@@ -5,7 +5,13 @@ try:
     q = 1
     for i in range(totalclientes):
         print(f"\nCliente # {q}")
-        id = int(input("Introduce el código del cliente:  "))
+        while True:
+            id = int(input("Introduce el código del cliente:  "))
+            if id in Clientes:
+                print("Ese codigo ya existe")
+            else:
+                break
+
         Clientes[id] = {}
         Clientes[id]["name"] = input("Introduce el nombre del cliente:  ")
 
